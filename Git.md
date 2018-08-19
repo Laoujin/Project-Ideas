@@ -1,6 +1,10 @@
 Git
 ===
 
+Many a interesting snippet:  
+https://github.com/git-tips/tips
+
+
 dotfiles: if .gitconfig doesn't exist, create it with correct includes
 
 Aliases
