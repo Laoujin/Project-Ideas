@@ -5,22 +5,11 @@ Desired State configuration
 https://gallery.technet.microsoft.com/scriptcenter/DSC-Resource-Kit-All-c449312d
 
 
-.. dir\bla
---> 1 terug en dan naar dir\bla -> met
-
-
 Add some sort of automated docs for ps functions?
 
 
-# TODO: PSReadLine: implement Ctrl+Z after Ctrl+V‏
-# TODO: Update PSReadLine to latest version
-
-
-WIP
----
-
 Install-PS-Modules needs to be converted to official registry
-NodeModules needs to be replaced with yarn?
+
 
 
 Check out: https://github.com/jayharris/dotfiles-windows
