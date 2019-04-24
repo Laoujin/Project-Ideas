@@ -3,24 +3,30 @@ Project Ideas
 
 But who has the time for all that.
 
+console.log() & console.table() & console.assert(condition, msg)?
+console.log() // Placeholders: https://stackoverflow.com/a/42037057/540352
+
+console.time() & timeEnd(), timeStamp()?
+console.log() / warn, error, info, trace, debug
+console.count, context, group/End/Collapsed, dir, dirxml, clear
+memory, profile, profileEnd()
+
 
 Move Tutorials to here...
 
 
-TODO:  
+Funny JavaScript
+----------------
 
+```js
+new Boolean(true) === false
 
-Different default shortcuts for making screenshot  
-
-Visual Studio snippet for:
-
-public override string ToString() => $"";
---> Perhaps resharper?
---> MUST be in dotfiles!
-
-New Visual Studio binding: "Edit csproj file"
-
-
+[] + [] === ''
+typeof([] + {}) === '[object Object]'
+{} + [] === 0
+{} + {} === NaN
+Array(16).join('wat' - 1) + ' Batman' === 'NaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaN Batman'
+```
 
 
 
