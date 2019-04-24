@@ -10,16 +10,6 @@ dotfiles: if .gitconfig doesn't exist, create it with correct includes
 Aliases
 -------
 ```
-git add 0 --> add the first file from git status
-git status-0 --> get the filename of the first file in git status
---> then add these shortcuts for multiple commands?
-
-git diff SOME_FILE
-git add “whatever file was selected in the previous command”
-git add 0
-=== git add the first file of git status (take into account that files might already have been staged)
-
-
 Shortcuts for interfacing with GitHub:
 https://hub.github.com/
 git pr -> pull-request = git po + check out the pull-request url + start url - check ruby gem for stash pull requests

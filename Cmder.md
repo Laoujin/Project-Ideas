@@ -40,3 +40,15 @@ Don't just take the amount of time spent on a filesystem location but also:
 - direct shortcut for d:\ h:\ ... ctrl+alt+win+d ?
 - favorite locations
 - blacklist locations
+
+
+## Mklink
+
+```powershell
+function mklink { cmd /c mklink $args }
+{ cmd /c mklink /D "toDir" fromDir }
+/H for a hard link
+```
+
+Native PowerShell wrapper for MKLINK:  
+https://gist.github.com/jpoehls/2891103
