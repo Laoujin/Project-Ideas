@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Implement IDisposable</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Implements the Dispose Finalize pattern.</Description>
+      <Shortcut>dispose</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>System</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>managed</ID>
+          <ToolTip>Dispose managed state (managed objects)</ToolTip>
+          <Default>' TODO: dispose managed state (managed objects).</Default>
+        </Literal>
+        <Literal>
+          <ID>unmanaged</ID>
+          <ToolTip>Free unmanaged resources (unmanaged objects)</ToolTip>
+          <Default>' TODO: free unmanaged resources (unmanaged objects) and set large fields to null.</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB"><![CDATA[Implements IDisposable
+
+#Region " IDisposable "
+    Private _isDisposed As Boolean
+    
+    ''' <summary>
+    ''' Releases all resources
+    ''' </summary>
+    ''' <param name="disposing">True when the user called Dispose. False when called from the Finalizer</param>
+    Protected Overridable Sub DisposeCore(ByVal disposing As Boolean)
+    End Sub
+
+    ''' <summary>
+    ''' Releases all resources
+    ''' </summary>
+    ''' <param name="disposing">True when the user called Dispose. False when called from the Finalizer</param>
+    Private Sub Dispose(ByVal disposing As Boolean)
+        If Not Me._isDisposed Then
+            If disposing Then
+                $managed$
+            End If
+            $unmanaged$
+        End If
+        DisposeCore(disposing)
+        Me._isDisposed = True
+    End Sub
+
+    ''' <summary>
+    ''' Finalizer kicks in action if user forgot to Dispose()
+    ''' </summary>
+    ''' <remarks>Do not change this code. Put cleanup code in Dispose(ByVal disposing As Boolean) above.</remarks>
+    Protected Overrides Sub Finalize()
+        Dispose(False)
+        MyBase.Finalize()
+    End Sub
+    
+    ''' <summary>
+    ''' Releases all resources
+    ''' </summary>
+    ''' <remarks>Do not change this code. Put cleanup code in Dispose(ByVal disposing As Boolean) above.</remarks>
+    Public Sub Dispose() Implements IDisposable.Dispose
+        Dispose(True)
+        GC.SuppressFinalize(Me)
+    End Sub
+#End Region]]></Code>
+  </Snippet>
+</CodeSnippet>
+</CodeSnippets>

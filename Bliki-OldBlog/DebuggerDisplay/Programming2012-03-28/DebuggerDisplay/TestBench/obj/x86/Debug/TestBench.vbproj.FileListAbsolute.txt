@@ -1,0 +1,14 @@
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\bin\Debug\TestBench.exe
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\bin\Debug\TestBench.pdb
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\bin\Debug\TestBench.xml
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\bin\Debug\DebuggerDisplay.exe
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\bin\Debug\DebuggerDisplay.pdb
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\bin\Debug\DebuggerDisplay.xml
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\obj\x86\Debug\TestBench.Form1.resources
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\obj\x86\Debug\TestBench.Resources.resources
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\obj\x86\Debug\TestBench.exe
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\obj\x86\Debug\TestBench.xml
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\TestBench\obj\x86\Debug\TestBench.pdb

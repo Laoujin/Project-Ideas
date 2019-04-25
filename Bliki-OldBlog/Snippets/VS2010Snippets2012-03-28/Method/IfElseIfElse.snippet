@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>If ElseIf Else</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Inserts an If...ElseIf...Else...End If statement.</Description>
+      <Shortcut>IfElseIf</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Condition1</ID>
+          <Type>Boolean</Type>
+          <ToolTip>Replace with an expression that evaluates to either True or False.</ToolTip>
+          <Default>True</Default>
+        </Literal>
+        <Literal>
+          <ID>Condition2</ID>
+          <Type>Boolean</Type>
+          <ToolTip>Replace with an expression that evaluates to either True or False.</ToolTip>
+          <Default>False</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[If $Condition1$ Then
+
+ElseIf $Condition2$ Then
+
+Else
+
+End If]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

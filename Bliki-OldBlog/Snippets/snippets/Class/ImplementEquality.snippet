@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Implement IEquatable</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Implement the IEquatable pattern to determine equality of structs and classes.</Description>
+      <Shortcut>equality</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>type</ID>
+          <ToolTip>The type.</ToolTip>
+          <Default>String</Default>
+        </Literal>
+        <Literal>
+          <ID>propertyName</ID>
+          <Type>String</Type>
+          <ToolTip>Replace with property name.</ToolTip>
+          <Default>propertyName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB"><![CDATA[Implements IEquatable(Of $type$)
+
+#Region " IEquatable "
+    Public Overloads Function Equals(ByVal other As $type$) As Boolean Implements IEquatable(Of $type$).Equals
+        If other Is Nothing Then Return False
+        If Object.ReferenceEquals(Me, other) Then Return True
+        If Me.GetType() <> other.GetType() Then Return False
+        Return Me.$propertyName$.Equals(other.$propertyName$)
+    End Function
+
+    Public Overrides Function GetHashCode() As Integer
+        Return $propertyName$.GetHashCode()
+    End Function
+
+    Public Overrides Function Equals(ByVal obj As Object) As Boolean
+        Return Equals(TryCast(obj, $type$))
+    End Function
+#End Region]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

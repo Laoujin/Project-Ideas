@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Select Case Statement</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>Inserts a Select Case statement.</Description>
+      <Shortcut>Select</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+      </Imports>
+      <Declarations>
+        <Object>
+          <ID>Variable</ID>
+          <Type>Object</Type>
+          <ToolTip>Replace with an expression.</ToolTip>
+          <Default>variableName</Default>
+        </Object>
+        <Literal>
+          <ID>Case1</ID>
+          <Type></Type>
+          <ToolTip>Replace with a valid value of the expression.</ToolTip>
+          <Default>1</Default>
+        </Literal>
+        <Literal>
+          <ID>Case2</ID>
+          <Type></Type>
+          <ToolTip>Replace with another valid value of the expression.</ToolTip>
+          <Default>2</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method body">
+  <![CDATA[Select Case $Variable$
+    Case $Case1$
+
+    Case $Case2$
+
+    Case Else
+
+End Select]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

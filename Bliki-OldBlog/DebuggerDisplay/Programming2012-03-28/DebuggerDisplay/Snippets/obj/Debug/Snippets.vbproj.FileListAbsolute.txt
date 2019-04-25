@@ -1,0 +1,10 @@
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\Snippets\bin\Debug\Snippets.dll
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\Snippets\bin\Debug\Snippets.pdb
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\Snippets\bin\Debug\Snippets.xml
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\Snippets\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\Snippets\obj\Debug\Snippets.Resources.resources
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\Snippets\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\Snippets\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\Snippets\obj\Debug\Snippets.dll
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\Snippets\obj\Debug\Snippets.xml
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\Snippets\obj\Debug\Snippets.pdb

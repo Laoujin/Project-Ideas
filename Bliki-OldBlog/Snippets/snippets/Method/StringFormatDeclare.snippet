@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Declare String And Format</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Inserts a new variable declaration with String.Format() initialization.</Description>
+      <Shortcut>dsf</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>System</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>str</ID>
+          <ToolTip>The string message to be formatted.</ToolTip>
+          <Default>{0}</Default>
+        </Literal>
+        <Literal>
+          <ID>var</ID>
+          <ToolTip>The variable to be inserted in the string message.</ToolTip>
+          <Default>variable</Default>
+        </Literal>
+        <Literal>
+          <ID>declVar</ID>
+          <ToolTip>The variable the string message will be assigned to.</ToolTip>
+          <Default>decl</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB"><![CDATA[Dim $declVar$ As String = String.Format("$str$", $var$)]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

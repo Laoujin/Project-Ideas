@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Debug.Assert Not Null</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Shortcut to Debug.Assert(Not Null).</Description>
+      <Shortcut>dann</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>IsNull</ID>
+          <ToolTip>Message to show when the object is null.</ToolTip>
+          <Default>Is Null</Default>
+        </Literal>
+		<Object>
+          <ID>obj</ID>
+          <ToolTip>Replace with the object that will not be null.</ToolTip>
+          <Default>someObj</Default>
+        </Object>
+      </Declarations>
+      <Code Language="VB"><![CDATA[Debug.Assert($obj$ IsNot Nothing, "$obj$ $IsNull$")]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

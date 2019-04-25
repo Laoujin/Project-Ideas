@@ -1,0 +1,12 @@
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplay\DebuggerDisplay\bin\Debug\DebuggerDisplay.exe
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplay\DebuggerDisplay\bin\Debug\DebuggerDisplay.pdb
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplay\DebuggerDisplay\bin\Debug\DebuggerDisplay.xml
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplay\DebuggerDisplay\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplay\DebuggerDisplay\obj\x86\Debug\DebuggerDisplay.Resources.resources
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplay\DebuggerDisplay\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplay\DebuggerDisplay\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplay\DebuggerDisplay\obj\x86\Debug\DebuggerDisplay.exe
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplay\DebuggerDisplay\obj\x86\Debug\DebuggerDisplay.xml
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplay\DebuggerDisplay\obj\x86\Debug\DebuggerDisplay.pdb
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\DebuggerDisplay\bin\Debug\DebuggerDisplay.exe.CodeAnalysisLog.xml
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\DebuggerDisplay\bin\Debug\DebuggerDisplay.exe.lastcodeanalysissucceeded

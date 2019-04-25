@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            height: 100%;
+            background-color: lightyellow;
+        }
+        #main {
+            position: absolute;
+            width: 600px;
+            height: 460px;
+            top: 50%;
+            left: 50%;
+            margin-left: -300px;
+            margin-top: -230px;
+            background-color: lightgreen;
+            border-radius: 12px;
+            box-shadow: 10px 10px 5px #888888;
+        }
+        #question {
+            font-family: 'Segoe UI';
+            font-size: 24pt;
+            color: green;
+        }
+        #answers {
+            margin-top: 12px;
+        }
+        .answer {
+            font-family: 'Segoe UI';
+            font-size: 18pt;
+            line-height: 1.8em;
+        }
+        #next-button {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 360px;
+            left: 260px;
+        }
+    </style>
+
+    <script type="text/javascript" src="../scripts/jquery-1.6.2.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#next-button").click(function (e) {
+                sessionStorage["answer1"] = $("input:radio:checked").val();
+                location = "Html5Quiz2.html";
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <div style="margin: 28px">
+            <span id="question">What are the three possible return values when you call canPlayType on an AUDIO or VIDEO element?</span>
+            <div id="answers">
+                <form>
+                    <input type="radio" name="options" value="1" checked />&nbsp;<span class="answer">"yes," "no," and "maybe"</span><br />
+                    <input type="radio" name="options" value="2" />&nbsp;<span class="answer">"yes", "no," and "indeterminate"</span><br />
+                    <input type="radio" name="options" value="3" />&nbsp;<span class="answer">"probably," "maybe," and "no"</span><br />
+                    <input type="radio" name="options" value="4" />&nbsp;<span class="answer">"probably," "maybe," and ""</span>
+                </form>
+            </div>
+            <img id="next-button" src="..\images\next.png" />
+        </div>
+    </div>
+</body>
+</html>

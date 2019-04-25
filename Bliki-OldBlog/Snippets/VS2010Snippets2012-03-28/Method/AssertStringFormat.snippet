@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Debug.Assert String.Format</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Shortcut to Debug.Assert with a String.Format to compose the message.</Description>
+      <Shortcut>dasf</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>value</ID>
+          <ToolTip>Variable to show in the message.</ToolTip>
+          <Default>value</Default>
+        </Literal>
+        <Literal>
+          <ID>message</ID>
+          <ToolTip>Message that will be formatted.</ToolTip>
+          <Default>{0}</Default>
+        </Literal>
+        <Literal>
+          <ID>condition</ID>
+          <ToolTip>Replace with a condition.</ToolTip>
+          <Default>True</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB"><![CDATA[Debug.Assert($condition$, String.Format("$message$", $value$))]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,7 @@
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplayCSharp\DebuggerDisplayCSharp\bin\Debug\DebuggerDisplayCSharp.exe
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplayCSharp\DebuggerDisplayCSharp\bin\Debug\DebuggerDisplayCSharp.pdb
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplayCSharp\DebuggerDisplayCSharp\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplayCSharp\DebuggerDisplayCSharp\obj\x86\Debug\DebuggerDisplayCSharp.exe
+c:\users\wouter\documents\visual studio 2010\Projects\DebuggerDisplayCSharp\DebuggerDisplayCSharp\obj\x86\Debug\DebuggerDisplayCSharp.pdb
+C:\Users\PC\Documents\Dropbox\Personal\!Programming\Blogging\DebuggerDisplay\DebuggerDisplayCSharp\DebuggerDisplayCSharp\obj\x86\Debug\DebuggerDisplayCSharp.exe
+C:\Users\PC\Documents\Dropbox\Personal\!Programming\Blogging\DebuggerDisplay\DebuggerDisplayCSharp\DebuggerDisplayCSharp\obj\x86\Debug\DebuggerDisplayCSharp.pdb

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Debug.Assert</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Shortcut to Debug.Assert().</Description>
+      <Shortcut>dast</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+		    <Literal>
+          <ID>message</ID>
+          <ToolTip>Message that will be shown when the assertion fails.</ToolTip>
+          <Default>bug</Default>
+        </Literal>
+        <Literal>
+          <ID>condition</ID>
+          <ToolTip>Replace with a condition.</ToolTip>
+          <Default>True</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB"><![CDATA[Debug.Assert($condition$, "$message$")]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Property - Add 2 (with regions)</Title>
+			<Shortcut>fullprop2</Shortcut>
+			<Description>Code snippet for two properties with backing fields</Description>
+			<Author>Van Schandevijl Wouter</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+        <Literal>
+          <ID>value</ID>
+          <ToolTip>The first backing field</ToolTip>
+          <Default>_value</Default>
+        </Literal>
+        <Literal>
+          <ID>valueType</ID>
+          <ToolTip>The type of the first backing field</ToolTip>
+          <Default>String</Default>
+        </Literal>
+        <Literal>
+          <ID>propertyName</ID>
+          <ToolTip>The name of the property exposing the first backing field</ToolTip>
+          <Default>Value</Default>
+        </Literal>
+        <Literal>
+          <ID>paramValue</ID>
+          <ToolTip>The name of the parameter to set the first backing field</ToolTip>
+          <Default>value</Default>
+        </Literal>
+        <Literal>
+          <ID>propSummary</ID>
+          <ToolTip>Replace with a descriptive summary of the property returning the first field</ToolTip>
+          <Default>value</Default>
+        </Literal>
+
+        <Literal>
+          <ID>value2</ID>
+          <ToolTip>The second backing field</ToolTip>
+          <Default>_value2</Default>
+        </Literal>
+        <Literal>
+          <ID>valueType2</ID>
+          <ToolTip>The type of the second backing field</ToolTip>
+          <Default>Integer</Default>
+        </Literal>
+        <Literal>
+          <ID>propertyName2</ID>
+          <ToolTip>The name of the property exposing the second backing field</ToolTip>
+          <Default>Value2</Default>
+        </Literal>
+        <Literal>
+          <ID>paramValue2</ID>
+          <ToolTip>The name of the parameter to set the second backing field</ToolTip>
+          <Default>value2</Default>
+        </Literal>
+        <Literal>
+          <ID>propSummary2</ID>
+          <ToolTip>Replace with a descriptive summary of the second property</ToolTip>
+          <Default>value2</Default>
+        </Literal>
+			</Declarations>
+			<Code Language="VB">
+        <![CDATA[#Region " Fields "
+  Private $value$ As $valueType$
+  Private $value2$ As $valueType2$
+  #End Region
+  
+  #Region " Properties "
+  ''' <summary>
+  ''' Gets or sets the $propSummary$
+  ''' </summary>
+  Public Property $propertyName$() As $valueType$
+    Get
+      Return $value$
+    End Get
+    Set(ByVal value As $valueType$)
+      $value$ = value
+    End Set
+  End Property
+  
+  ''' <summary>
+  ''' Gets or sets the $propSummary2$
+  ''' </summary>
+  Public Property $propertyName2$() As $valueType2$
+    Get
+      Return $value2$
+    End Get
+    Set(ByVal value As $valueType2$)
+      $value2$ = value
+    End Set
+  End Property
+  #End Region
+  
+  #Region " Constructors "
+  Public Sub New(ByVal $paramValue$ As $valueType$, ByVal $paramValue2$ As $valueType2$)
+    Me.$value$ = $paramValue$
+    Me.$value2$ = $paramValue2$
+  End Sub
+  #End Region]]></Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

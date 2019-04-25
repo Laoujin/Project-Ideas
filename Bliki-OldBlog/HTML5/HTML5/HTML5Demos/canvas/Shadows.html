@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        height: 100%;
+        background-color: #e0e0e0;
+    }
+    #output { 
+	    position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -250px;
+        margin-top: -250px;
+        background-color: White;
+        border: 1px solid black;
+    }
+    </style>
+
+    <script type="text/javascript" src="../scripts/jquery-1.6.2.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            if (!document.createElement("canvas").getContext) {
+                alert("This browser doesn't support canvases");
+            }
+            else {
+                // Get a canvas and a drawing context
+                var canvas = document.getElementById("output");
+                var dc = canvas.getContext("2d");
+
+                dc.translate(-44, -24);
+
+                dc.shadowOffsetX = 8;
+                dc.shadowOffsetY = 8;
+                dc.shadowBlur = 16;
+                dc.shadowColor = "rgba(0, 0, 0, 0.5)";
+
+                // Draw the body
+                drawEllipse(dc, 298, 264, 243, 286, "#050505", 0);
+
+                // Draw the face
+                drawEllipse(dc, 296, 220, 189, 183, "#404040", 0);
+
+                // Draw the belly
+                drawEllipse(dc, 297, 307, 202, 188, "#f0f0f0", 0);
+
+                // Draw the left eye
+                drawEllipse(dc, 263, 193, 60, 81, "#f0f0f0", 0);
+                drawEllipse(dc, 277, 199, 23, 29, "#101010", 0);
+
+                // Draw the right eye
+                drawEllipse(dc, 328, 199, 71, 51, "#f0f0f0", 0);
+                drawEllipse(dc, 305, 199, 20, 22, "#101010", 0);
+
+                // Draw the nose
+                dc.beginPath();
+                dc.fillStyle = "orange";
+                dc.moveTo(275, 224);
+                dc.lineTo(295, 264);
+                dc.lineTo(325, 224);
+                dc.fill();
+
+                // Draw the left arm
+                dc.beginPath();
+                dc.fillStyle = "#050505";
+                dc.moveTo(185, 217);
+                dc.lineTo(138, 260);
+                dc.lineTo(149, 270);
+                dc.lineTo(183, 287);
+                dc.fill();
+
+                // Draw the right arm
+                dc.beginPath();
+                dc.fillStyle = "#050505";
+                dc.moveTo(407, 225);
+                dc.lineTo(457, 273);
+                dc.lineTo(425, 280);
+                dc.lineTo(410, 279);
+                dc.fill();
+
+                // Draw the left foot
+                drawEllipse(dc, 206, 372, 92, 43, "#b15a01", 10);
+
+                // Draw the right foot
+                drawEllipse(dc, 369, 401, 92, 43, "#b15a01", -17);
+            }
+
+            function drawEllipse(dc, cx, cy, width, height, color, angle) {
+                dc.save();
+                dc.translate(cx, cy);
+                dc.rotate(angle * Math.PI / 180);
+                dc.scale(Math.max(width / height, 1), Math.max(height / width, 1));
+                dc.beginPath();
+                dc.fillStyle = color;
+                dc.arc(0, 0, Math.min(width, height) / 2, 0, Math.PI * 2, true);
+                dc.fill();
+                dc.restore();
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <canvas id="output" width="500" height="500"></canvas>
+</body>
+</html>

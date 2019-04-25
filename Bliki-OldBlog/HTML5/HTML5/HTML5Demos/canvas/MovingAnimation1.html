@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        height: 100%;
+        background-color: #e0e0e0;
+    }
+    #output { 
+	    position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color: White;
+        border: 1px solid black
+    }
+    </style>
+
+    <script type="text/javascript" src="../scripts/jquery-1.6.2.min.js"></script>
+
+    <script type="text/javascript">
+        var _dc;
+        var _cx, _cy;
+        var _x = 200;
+        var _y = 200;
+        var _dx = 5;
+        var _dy = 3;
+
+        $(function () {
+            if (!document.createElement("canvas").getContext) {
+                alert("This browser doesn't support canvases");
+            }
+            else {
+                // Get a canvas and a drawing context
+                var canvas = document.getElementById("output");
+                _dc = canvas.getContext("2d");
+
+                // Initialize _cx and _cy with the width and height of the canvas
+                _cx = canvas.width;
+                _cy = canvas.height;
+
+                // Draw a red circle in the center of the canvas
+                _dc.fillStyle = "red";
+                _dc.beginPath();
+                _dc.arc(_x, _y, 50, 0, Math.PI * 2, true);
+                _dc.fill();
+
+                // Set a timer to fire every 10 milliseconds
+                setInterval(move, 20);
+            }
+        });
+
+        function move() {
+            // Erase the circle from its old position
+            _dc.clearRect(_x - 50, _y - 50, 100, 100);
+
+            // Compute the circle's new position
+            var x = _x + _dx;
+
+            if (x < 51 || x > (_cx - 51)) {
+                x = _x - _dx;
+                _dx = -_dx;
+            }
+
+            var y = _y + _dy;
+
+            if (y < 51 || y > (_cy - 51)) {
+                y = _y - _dy;
+                _dy = -_dy;
+            }
+
+            _x = x;
+            _y = y;
+
+            // Redraw the circle in its new position
+            _dc.fillStyle = "red";
+            _dc.beginPath();
+            _dc.arc(_x, _y, 50, 0, Math.PI * 2, true);
+            _dc.fill();
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="output" width="400px" height="400px"></canvas>
+</body>
+</html>

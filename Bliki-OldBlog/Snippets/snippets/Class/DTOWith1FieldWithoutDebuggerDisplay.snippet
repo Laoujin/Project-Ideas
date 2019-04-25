@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Data Transfer Object (1 field)</Title>
+			<Shortcut>dto</Shortcut>
+			<Description>Code snippet for a immutable class with one property</Description>
+			<Author>Van Schandevijl Wouter</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Class name</ToolTip>
+					<Default>SomeType</Default>
+				</Literal>
+        <Literal>
+          <ID>modifier</ID>
+          <ToolTip>Access modifier of the class</ToolTip>
+          <Default>Public</Default>
+        </Literal>
+        <Literal>
+          <ID>value</ID>
+          <ToolTip>The first backing field of the EventArgs</ToolTip>
+          <Default>_value</Default>
+        </Literal>
+        <Literal>
+          <ID>valueType</ID>
+          <ToolTip>The type of the first backing field of the EventArgs</ToolTip>
+          <Default>String</Default>
+        </Literal>
+        <Literal>
+          <ID>propertyName</ID>
+          <ToolTip>The name of the property exposing the backing field</ToolTip>
+          <Default>Value</Default>
+        </Literal>
+        <Literal>
+          <ID>paramValue</ID>
+          <ToolTip>The name of the parameter to set the backing field</ToolTip>
+          <Default>value</Default>
+        </Literal>
+        <Literal>
+          <ID>propSummary</ID>
+          <ToolTip>Replace with a descriptive summary of the property</ToolTip>
+          <Default>value</Default>
+        </Literal>
+			</Declarations>
+			<Code Language="VB"><![CDATA[''' <summary>
+''' 
+''' </summary>
+  $modifier$ Class $name$
+  #Region " Fields "
+  Private $value$ As $valueType$
+  #End Region
+  
+  #Region " Properties "
+  ''' <summary>
+  ''' Gets the $propSummary$
+  ''' </summary>
+  Public ReadOnly Property $propertyName$() As $valueType$
+    Get
+      Return $value$
+    End Get
+  End Property
+  #End Region
+  
+  #Region " Constructors "
+  Public Sub New(ByVal $paramValue$ As $valueType$)
+    Me.$value$ = $paramValue$
+  End Sub
+  #End Region
+	End Class]]></Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

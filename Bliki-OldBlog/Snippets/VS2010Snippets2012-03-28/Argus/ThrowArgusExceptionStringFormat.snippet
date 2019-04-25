@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Throw ArgusException with String.Format</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Throws an ArgusException with String.Format.</Description>
+      <Shortcut>ThrowSF</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>exceptionMsg</ID>
+          <Type>String</Type>
+          <ToolTip>Replace with the exception message.</ToolTip>
+          <Default>"Exception Occured"</Default>
+        </Literal>
+        <Literal>
+          <ID>message</ID>
+          <Type>String</Type>
+          <ToolTip>Replace with the exception format string.</ToolTip>
+          <Default>{0}</Default>
+        </Literal>
+        <Literal>
+          <ID>variable</ID>
+          <Type>String</Type>
+          <ToolTip>Replace with the value to embed in the exception message.</ToolTip>
+          <Default>value</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[Throw New ArgusException(String.Format("$message$", $variable$))]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Property - Default ReadOnly</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Defines a readonly default property or index property.</Description>
+      <Shortcut>rdefprop</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>System</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>modifier</ID>
+          <Type>
+          </Type>
+          <ToolTip>Access modifier of the property.</ToolTip>
+          <Default>Public</Default>
+        </Literal>
+        <Literal>
+          <ID>propertyName</ID>
+          <Type>
+          </Type>
+          <ToolTip>Rename to descriptive name for the property.</ToolTip>
+          <Default>PropertyName</Default>
+        </Literal>
+        <Literal>
+          <ID>index</ID>
+          <ToolTip>Parameter name for the property.</ToolTip>
+          <Default>index</Default>
+        </Literal>
+        <Literal>
+          <ID>indexType</ID>
+          <ToolTip>Replace with the type of the index</ToolTip>
+          <Default>Integer</Default>
+        </Literal>
+        <Literal>
+          <ID>propertyType</ID>
+          <ToolTip>Replace with the type returned by the property.</ToolTip>
+          <Default>String</Default>
+        </Literal>
+        <Literal>
+          <ID>collection</ID>
+          <ToolTip>Replace with the collection fieldname.</ToolTip>
+          <Default>_collection</Default>
+        </Literal>
+        <Literal>
+          <ID>propSummary</ID>
+          <ToolTip>Replace with a descriptive summary of the property.</ToolTip>
+          <Default>value</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB"><![CDATA[''' <summary>
+  ''' Geeft $propSummary$
+  ''' </summary>
+        Default $modifier$ ReadOnly Property $propertyName$(ByVal $index$ As $indexType$) As $propertyType$
+        Get
+            If $collection$.ContainsKey($index$) Then
+                Return $collection$($index$)
+            Else
+                Throw New ArgumentOutOfRangeException()
+            End If
+        End Get
+    End Property]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

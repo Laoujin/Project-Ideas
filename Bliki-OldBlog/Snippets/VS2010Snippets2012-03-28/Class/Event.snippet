@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Event</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Declares an event.</Description>
+      <Shortcut>Event</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>System</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>EventName</ID>
+          <Type>String</Type>
+          <ToolTip>Replace with the event name.</ToolTip>
+          <Default>PropertyChanged</Default>
+        </Literal>
+        <Literal>
+          <ID>EventArgsType</ID>
+          <Type>EventArgs</Type>
+          <ToolTip>Replace with EventArgs type.</ToolTip>
+          <Default>EventArgs</Default>
+        </Literal>
+        <Literal>
+          <ID>Scope</ID>
+          <Type>String</Type>
+          <ToolTip>Replace with the accessibility of the event.</ToolTip>
+          <Default>Public</Default>
+        </Literal>
+        <Literal>
+          <ID>when</ID>
+          <Type>String</Type>
+          <ToolTip>Describe when this event will be raised.</ToolTip>
+          <Default>when?</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method decl">
+        <![CDATA[''' <summary>
+''' Gebeurt wanneer $when$
+''' </summary>
+$Scope$ Event $EventName$ As EventHandler(Of $EventArgsType$)]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

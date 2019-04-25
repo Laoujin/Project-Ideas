@@ -1,0 +1,10 @@
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\ClassLibrary2\bin\Debug\ClassLibrary2.dll
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\ClassLibrary2\bin\Debug\ClassLibrary2.pdb
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\ClassLibrary2\bin\Debug\ClassLibrary2.xml
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\ClassLibrary2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\ClassLibrary2\obj\Debug\ClassLibrary2.Resources.resources
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\ClassLibrary2\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\ClassLibrary2\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\ClassLibrary2\obj\Debug\ClassLibrary2.dll
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\ClassLibrary2\obj\Debug\ClassLibrary2.xml
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\ClassLibrary2\obj\Debug\ClassLibrary2.pdb

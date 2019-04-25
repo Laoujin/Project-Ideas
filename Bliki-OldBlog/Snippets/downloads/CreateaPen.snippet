@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Create a Pen</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Creates a Pen object.</Description>
+      <Shortcut>drawPen</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.Drawing.dll</Assembly>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Drawing</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>color</ID>
+          <Type>System.Drawing.Color</Type>
+          <ToolTip>Replace with the color of the pen.</ToolTip>
+          <Default>Color.Tomato</Default>
+        </Literal>
+	<Literal>
+          <ID>penName</ID>
+          <Type>String</Type>
+          <ToolTip>Replace with the name of the pen object.</ToolTip>
+          <Default>tomatoPen</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[Dim $penName$ As New Pen($color$)]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

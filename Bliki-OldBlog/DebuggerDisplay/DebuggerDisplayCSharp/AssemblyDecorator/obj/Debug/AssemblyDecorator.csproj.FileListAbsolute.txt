@@ -1,0 +1,5 @@
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplayCSharp\AssemblyDecorator\bin\Debug\AssemblyDecorator.dll
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplayCSharp\AssemblyDecorator\bin\Debug\AssemblyDecorator.pdb
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplayCSharp\AssemblyDecorator\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplayCSharp\AssemblyDecorator\obj\Debug\AssemblyDecorator.dll
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplayCSharp\AssemblyDecorator\obj\Debug\AssemblyDecorator.pdb

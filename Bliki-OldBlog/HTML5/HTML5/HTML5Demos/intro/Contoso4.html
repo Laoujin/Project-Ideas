@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Contoso Times</title>
+    <link href="../styles/contoso.css" rel="stylesheet" type="text/css" />
+    <script src="../scripts/jquery-1.6.2.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            // Display today's date at the top of the page
+            $("#today").text(getTodaysDateString().toUpperCase());
+        });
+
+        // Helper function to get a string of the form "Wednesday, September 7, 2011"
+        // representing today's date
+        function getTodaysDateString() {
+            var result = new Date().toDateString();
+            result = result.replace("Mon", "Monday,").replace("Tue", "Tuesday,").replace("Wed", "Wednesday,").replace("Thu", "Thursday,").replace("Fri", "Friday,").replace("Sat", "Saturday,").replace("Sun", "Sunday,");
+            result = result.replace("Jan", "January").replace("Feb", "February").replace("Mar", "March").replace("Apr", "April").replace("Jun", "Jun").replace("Jul", "July").replace("Aug", "August").replace("Sep", "September").replace("Oct", "October").replace("Nov", "November").replace("Dec", "December");
+            var index = result.length - 5;
+            result = result.slice(0, index) + "," + result.slice(index);
+            return result;
+        }
+    </script>
+</head>
+<body>
+
+<!-- DATE AND TRADEMARK -->
+<div id="trademark">
+    <div id="leftheader">
+        UPDATED <time id="today" pubdate></time>
+    </div>
+    <div id="rightheader">
+        <h1>CONTOSO TIMES, SINCE 1911</h1>
+    </div>
+</div>
+
+<!-- BANNER -->
+<div id="banner">
+    <div id="leftbanner">
+        <img id="getthescoop" src="../images/contoso/banner_ad.gif" alt="" />
+    </div>
+    <div id="rightbanner">
+        <img src="../images/contoso/banner_logo.gif" alt="" />
+    </div>
+</div>
+
+<!-- TOP BREADCRUMBS -->
+<div id="topbreadcrumbscontainer">
+    <div id="topbreadcrumbs">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Members Only</a></li>
+            <li><a href="#">Travel</a></li>
+            <li>Airlines Announce Lowest European Fares Ever</li>
+        </ul>
+    </div>
+
+    <div id="login"><a href="#" id="loginlink">Login</a></div>
+</div>
+
+<!-- MAIN BODY -->
+<div id="mainbody">
+    <div id="leftnav">
+        <ul>
+            <li class="navheading">News</li>
+            <li class="navitem"><a href="#">Local</a></li>
+            <li class="navitem"><a href="#">National</a></li>
+            <li class="navitem"><a href="#">World</a></li>
+            <li class="navheading">Sports</li>
+            <li class="navitem"><a href="#">Baseball</a></li>
+            <li class="navitem"><a href="#">Basketball</a></li>
+            <li class="navitem"><a href="#">Football</a></li>
+            <li class="navitem"><a href="#">Soccer</a></li>
+            <li class="navheading">Members Only</li>
+            <li class="navitem"><a href="#">Travel</a></li>
+            <li class="navitem"><a href="#">Entertainment</a></li>
+            <li class="navitem"><a href="#">Technology</a></li>
+        </ul>
+    </div>
+
+    <div id="article">
+        <h2><span>Travel</span></h2>
+        <h3><span>Airlines Announce Lowest European Fares Ever</span></h3>
+        <h4><span>Execs believe public will bite despite lack of on-board lavatories</span></h4>
+        <p></p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vestibulum sit amet velit. Quisque dolor mauris, ultricies ut, consectetuer a, malesuada a, nisl. Donec a est. Aliquam dictum, lacus eget vestibulum cursus, nunc quam ullamcorper nunc, ut pulvinar erat magna ut nunc. Duis rhoncus nibh non augue. Aliquam nec sapien at ligula mattis ornare. Cras rutrum, quam eget imperdiet elementum, risus urna dapibus nulla, sed varius lacus orci id tellus. Etiam lacus magna, sollicitudin in, scelerisque a, suscipit at, pede. Vivamus tristique convallis lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam commodo enim ac mauris. Nullam tincidunt, libero eget imperdiet aliquam, lectus lorem suscipit justo, in ornare massa risus ut augue. In sit amet felis id sem venenatis tincidunt. Donec nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur mollis tincidunt libero. Suspendisse ac felis id orci ultricies accumsan. Praesent ornare leo quis massa. Vestibulum enim metus, congue sit amet, venenatis a, auctor in, massa.</p><p>Donec elit enim, aliquam ac, laoreet eu, dignissim eu, elit. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In iaculis venenatis pede. Integer porta. Praesent suscipit turpis vitae eros. Sed posuere, libero vitae varius feugiat, sapien magna feugiat libero, eu feugiat quam pede mattis nibh. Praesent ut ipsum vitae risus tristique congue. Phasellus convallis est consequat sapien. Fusce risus nibh, eleifend in, commodo eu, lobortis quis, nunc. Sed leo nisl, congue imperdiet, fermentum sed, imperdiet et, est. Phasellus pellentesque, diam a auctor ultrices, pede mauris tempor tortor, sed consectetuer tellus magna nec erat. Aliquam eget neque. Quisque pellentesque. Fusce elementum, neque hendrerit ultricies convallis, turpis odio congue libero, eget commodo massa orci nec wisi. Fusce condimentum suscipit tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi odio.</p><p>Suspendisse potenti. Cras vestibulum. Vivamus felis. Fusce quis enim nec pede porttitor feugiat. Curabitur tempor. Curabitur at augue vitae diam adipiscing auctor. Nulla accumsan auctor wisi. Fusce ac massa. Donec arcu est, rutrum vitae, lobortis in, adipiscing non, orci. Proin sit amet leo. Donec volutpat, wisi eget aliquam imperdiet, purus sapien hendrerit tellus, vel pretium lorem justo luctus orci. Suspendisse dapibus magna vel lorem. Phasellus quis est. In hac habitasse platea dictumst. Cras sem urna, volutpat ut, laoreet a, auctor eu, est. Cras in metus. Fusce venenatis dapibus pede. Phasellus non leo ut pede congue vulputate.</p><p>Nulla faucibus. Nulla accumsan ante vitae est ultrices lobortis. Donec mollis felis ut tellus. Suspendisse lobortis libero eget sem. Aliquam sit amet tortor. Vivamus aliquet dolor vel risus. Proin feugiat dictum nisl. Quisque ligula erat, pellentesque a, mollis eu, varius ac, ipsum. Vestibulum turpis nulla, eleifend non, rutrum sed, ultrices nec, ipsum. Praesent vel nisl. Etiam id dui. Integer dui mi, sodales vel, convallis quis, tempus molestie, lorem. Praesent tempor mi sit amet turpis tincidunt suscipit. Maecenas elementum. Pellentesque purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis pretium ante sed nulla. Maecenas convallis vulputate neque.</p>
+        <p>&nbsp;</p>
+    </div>
+</div>
+
+<!-- BOTTOM BREADCRUMBS -->
+<div id="bottombreadcrumbs">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Members Only</a></li>
+        <li><a href="#">Travel</a></li>
+        <li>Airlines Announce Lowest European Fares Ever</li>
+    </ul>
+</div>
+
+<!-- FOOTER -->
+<div>&copy; 2011 Contoso Times. All rights reserved <br />
+    <a href="#">contact us</a> | <a href="#">submit an article</a>
+</div>
+
+</body>
+</html>

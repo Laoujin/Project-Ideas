@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        height: 100%;
+        background-color: #202020;
+    }
+    #background {
+	    position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -320px;
+        margin-top: -232px;
+    }
+    #board { 
+	    position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -292px;
+        margin-top: -200px;
+    }
+    </style>
+
+    <script type="text/javascript" src="../scripts/jquery-1.6.2.min.js"></script>
+
+    <script type="text/javascript">
+        var _down = false;
+        var _canvas, _dc;
+        var _board;
+        var _x, _y;
+        var _worker;
+
+        $(function () {
+            if (!document.createElement("canvas").getContext) {
+                alert("This browser doesn't support the canvas API");
+                return;
+            }
+
+            if (!window.SharedWorker) {
+                alert("This browser doesn't support shared workers");
+                return;
+            }
+
+            // Get a canvas and a drawing context
+            _canvas = document.getElementById("board");
+            _dc = _canvas.getContext("2d");
+
+            // Initialize the drawing context to produce thick white lines
+            _dc.strokeStyle = "white";
+            _dc.lineWidth = 8;
+            _dc.lineCap = "round";
+
+            // Register handlers for mouse events
+            $("#board").mousedown(onMouseDown);
+            $("#board").mousemove(onMouseMove);
+            $("#board").mouseup(onMouseUp);
+            $("#board").mouseleave(onMouseUp);
+            $("#board").dblclick(onMouseDoubleClick);
+
+            // Connect to a shared worker for sending messages
+            _worker = new SharedWorker("../scripts/scribble.js");
+            _worker.port.start();
+        });
+
+        function onMouseDown(e) {
+            if (e.which == 1) {
+                _x = e.pageX - this.offsetLeft;
+                _y = e.pageY - this.offsetTop;
+                _down = true;
+
+                e.preventDefault();
+            }
+        }
+
+        function onMouseMove(e) {
+            if (_down && e.which == 1) {
+                var x = e.pageX - this.offsetLeft;
+                var y = e.pageY - this.offsetTop;
+                drawLine(_dc, _x, _y, x, y);
+                _x = x;
+                _y = y;
+
+                e.preventDefault();
+            }
+        }
+
+        function onMouseUp(e) {
+            if (e.which == 1) {
+                _down = false;
+                e.preventDefault();
+            }
+        }
+
+        function onMouseDoubleClick(e) {
+            if (e.which == 1) {
+                _dc.clearRect(0, 0, _canvas.width, _canvas.height);
+                e.preventDefault();
+            }
+        }
+
+        function drawLine(dc, x1, y1, x2, y2) {
+            // Draw the line
+            dc.beginPath();
+            dc.moveTo(x1, y1);
+            dc.lineTo(x2, y2);
+            dc.stroke();
+
+            // Broadcast the line coordinates using the shared worker
+            _worker.port.postMessage({ "x1": x1, "y1": y1, "x2": x2, "y2": y2 });
+        }
+    </script>
+</head>
+
+<body>
+    <img id="background" src="../images/chalkboard.jpg" />
+    <canvas id="board" width="584" height="410"></canvas>
+</body>
+</html>

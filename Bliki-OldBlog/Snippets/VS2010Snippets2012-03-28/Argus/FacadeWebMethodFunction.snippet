@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Facade - Function WebMethod</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Maakt een standaard Argus WebMethod facade function aan.</Description>
+      <Shortcut>webds</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>functionName</ID>
+          <Type>String</Type>
+          <ToolTip>The name of the webmethod.</ToolTip>
+          <Default>DSGet</Default>
+        </Literal>
+        <Literal>
+          <ID>returnType</ID>
+          <Type>String</Type>
+          <ToolTip>Het return type.</ToolTip>
+          <Default>DataSet</Default>
+        </Literal>
+        <Literal>
+          <ID>param1</ID>
+          <Type>String</Type>
+          <ToolTip>De naam van de eerste parameter.</ToolTip>
+          <Default>param</Default>
+        </Literal>
+        <Literal>
+          <ID>paramType1</ID>
+          <Type>String</Type>
+          <ToolTip>Het type van de eerste parameter.</ToolTip>
+          <Default>String</Default>
+        </Literal>
+        <Literal>
+          <ID>blClass</ID>
+          <Type>String</Type>
+          <ToolTip>De naam van de BL klasse.</ToolTip>
+          <Default>ControleBL</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB">
+        <![CDATA[''' <summary>
+    ''' 
+    ''' </summary>
+    <WebMethod(), Argus.Common.SerializedExceptionExtension()> _
+    Public Function $functionName$(ByVal $param1$ As $paramType1$) As $returnType$
+        Dim returnDs As $returnType$ = Nothing
+        Try
+            returnDs = $blClass$.$functionName$($param1$)
+
+        Catch ex As Exception
+            Dim method As String = System.Reflection.MethodInfo.GetCurrentMethod.Name
+            Dim paramStringFormat As String = "$param1$: {0}"
+            Dim paramValues() As Object = New Object() {$param1$}
+            ArgusService.ServiceLogging(ex, CLASSNAAM, method, paramStringFormat, paramValues)
+            Throw
+        End Try
+        Return returnDs
+    End Function]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

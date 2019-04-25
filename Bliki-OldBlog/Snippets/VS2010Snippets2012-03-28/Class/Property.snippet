@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Property</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Defines a Property with a backing field.</Description>
+      <Shortcut>pop</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>PropertyName</ID>
+          <Type>String</Type>
+          <ToolTip>Replace with property name.</ToolTip>
+          <Default>NewProperty</Default>
+        </Literal>
+        <Literal>
+          <ID>PropertyType</ID>
+          <ToolTip>Replace with the property type.</ToolTip>
+          <Default>String</Default>
+        </Literal>
+        <Object>
+          <ID>PrivateVariable</ID>
+          <Type>Object</Type>
+          <ToolTip>Replace this with the private variable name.</ToolTip>
+          <Default>_value</Default>
+        </Object>
+        <Literal>
+          <ID>propSummary</ID>
+          <ToolTip>Replace with a descriptive summary of the property</ToolTip>
+          <Default>value</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB"><![CDATA[Private $PrivateVariable$ As $PropertyType$
+      
+''' <summary>
+  ''' Geeft of zet $propSummary$
+  ''' </summary>
+Public Property $PropertyName$() As $PropertyType$
+    Get
+        Return $PrivateVariable$ 
+    End Get
+    Set(ByVal value As $PropertyType$)
+        $PrivateVariable$ = value
+    End Set
+End Property]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

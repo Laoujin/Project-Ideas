@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        height: 100%;
+    }
+    </style>
+
+    <script type="text/javascript" src="../scripts/jquery-1.6.2.min.js"></script>
+
+    <script type="text/javascript">
+        var _width = 100;
+        var _height = 100;
+        var _rmin, _rmax, _imin, _imax;
+        var _q1, _q2, _q3, _q4;
+        var _dc;
+        var _cx, _cy;
+        var _worker1, _worker2, _worker3, _worker4;
+        var _xmid, _ymid;
+
+        $(function () {
+            if (!window.Worker) {
+                alert("This browser doesn't support workers");
+            }
+            else if (!document.createElement("canvas").getContext) {
+                alert("This browser doesn't support canvases");
+            }
+            else {
+                // Get a canvas and a drawing context
+                var canvas = document.getElementById("output");
+                _dc = canvas.getContext("2d");
+
+                // Size the canvas to fit the browser window
+                _cx = $(window).width();
+                _cy = $(window).height();
+
+                canvas.width = _cx;
+                canvas.height = _cy;
+
+                // Initialize real and imaginary fractal coordinates and set
+                // their proportions equal to the proportions of the window
+                if (_cx > _cy) {
+                    var dx = (_cx / _cy) * 1.5;
+                    _rmin = -0.5 - dx;
+                    _rmax = -0.5 + dx;
+                    _imin = -1.5;
+                    _imax = 1.5;
+                }
+                else {
+                    _rmin = -2.0;
+                    _rmax = 1.0;
+                    var dy = (_cy / _cx) * 1.5;
+                    _imin = -dy;
+                    _imax = dy;
+                }
+
+                _xmid = Math.floor(_cx / 2.0);
+                _ymid = Math.floor(_cy / 2.0);
+
+                // Create four imageData objects -- one for each quadrant of the window
+                _q1 = _dc.createImageData(_xmid, _ymid);  // Upper left
+                _q2 = _dc.createImageData(_xmid, _ymid);  // Upper right
+                _q3 = _dc.createImageData(_xmid, _ymid);  // Lower left
+                _q4 = _dc.createImageData(_xmid, _ymid);  // Lower right
+
+                // Create four workers to parallelize the fractal computations
+                _worker1 = new Worker("../scripts/mandelbrot.js");
+                _worker2 = new Worker("../scripts/mandelbrot.js");
+                _worker3 = new Worker("../scripts/mandelbrot.js");
+                _worker4 = new Worker("../scripts/mandelbrot.js");
+
+                // Register common handler for messages from workers
+                _worker1.addEventListener("message", onImageDataReady, false);
+                _worker2.addEventListener("message", onImageDataReady, false);
+                _worker3.addEventListener("message", onImageDataReady, false);
+                _worker4.addEventListener("message", onImageDataReady, false);
+
+                // Generate the initial view of the Mandelbrot set
+                var rmid = (_rmin + _rmax) / 2.0;
+                var imid = (_imin + _imax) / 2.0;
+
+                var input1 = { "id": 1, "bitmap": _q1, "rmin": _rmin, "rmax": rmid, "imin": _imin, "imax": imid };
+                var input2 = { "id": 2, "bitmap": _q2, "rmin": rmid, "rmax": _rmax, "imin": _imin, "imax": imid };
+                var input3 = { "id": 3, "bitmap": _q3, "rmin": _rmin, "rmax": rmid, "imin": imid, "imax": _imax };
+                var input4 = { "id": 4, "bitmap": _q4, "rmin": rmid, "rmax": _rmax, "imin": imid, "imax": _imax };
+
+                _worker1.postMessage(input1);
+                _worker2.postMessage(input2);
+                _worker3.postMessage(input3);
+                _worker4.postMessage(input4);
+
+                // Register mousedown event handler
+                $("#output").mousedown(onMouseDown);
+            }
+        });
+
+        function onImageDataReady(e) {
+            // Extract input from e.data
+            var id = e.data.id;
+            var bitmap = e.data.bitmap;
+
+            var x = 0;
+            var y = 0;
+
+            // If the imageData just received corresponds to quadrant 2 or 4,
+            // adjust x accordingly
+            if (id == 2 || id == 4)
+                x = _xmid;
+
+            // If the imageData just received corresponds to quadrant 3 or 4,
+            // adjust y accordingly
+            if (id == 3 || id == 4)
+                y = _ymid;
+
+            // Draw the imageData
+            _dc.putImageData(bitmap, x, y);
+        }
+
+        function onMouseDown(e) {
+            if (e.which == 1) {
+                var x1 = e.pageX - (_width / 2);
+                var y1 = e.pageY - (_height / 2);
+                var x2 = x1 + _width;
+                var y2 = y1 + _height;
+
+                var imid = (y1 + y2) / 2;
+                var iheight = (x2 - x1) / (_cx / _cy);
+                y1 = imid - (iheight / 2);
+                y2 = imid + (iheight / 2);
+
+                var width = _rmax - _rmin;
+                var height = _imax - _imin;
+
+                var temp = _rmin;
+                _rmin = temp + (width * (x1 / _cx));
+                _rmax = temp + (width * (x2 / _cx));
+
+                temp = _imin;
+                _imin = temp + (height * (y1 / _cy));
+                _imax = temp + (height * (y2 / _cy));
+
+                // Generate a new view of the Mandelbrot set
+                var rmid = (_rmin + _rmax) / 2.0;
+                var imid = (_imin + _imax) / 2.0;
+
+                var input1 = { "id": 1, "bitmap": _q1, "rmin": _rmin, "rmax": rmid, "imin": _imin, "imax": imid };
+                var input2 = { "id": 2, "bitmap": _q2, "rmin": rmid, "rmax": _rmax, "imin": _imin, "imax": imid };
+                var input3 = { "id": 3, "bitmap": _q3, "rmin": _rmin, "rmax": rmid, "imin": imid, "imax": _imax };
+                var input4 = { "id": 4, "bitmap": _q4, "rmin": rmid, "rmax": _rmax, "imin": imid, "imax": _imax };
+
+                _worker1.postMessage(input1);
+                _worker2.postMessage(input2);
+                _worker3.postMessage(input3);
+                _worker4.postMessage(input4);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="output" style="cursor: crosshair"></canvas>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        height: 100%;
+        background-color: #404040;
+        font-family: Segoe WP;
+        font-size: 20pt;
+        color: White;
+    }
+    #output { 
+	    position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -200px;
+        margin-top: -150px;
+    }
+    </style>
+
+    <script type="text/javascript" src="../scripts/jquery-1.6.2.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            if (!navigator.geolocation)
+                alert("This browser doesn't support geolocation");
+            else
+                navigator.geolocation.getCurrentPosition(onPositionReady, onError);
+        });
+
+        function onPositionReady(position) {
+            document.getElementById("Latitude").innerHTML = position.coords.latitude;
+            document.getElementById("Longitude").innerHTML = position.coords.longitude;
+            document.getElementById("Altitude").innerHTML = position.coords.altitude;
+            document.getElementById("Accuracy").innerHTML = position.coords.accuracy;
+            document.getElementById("AltitudeAccuracy").innerHTML = position.coords.altitudeAccuracy;
+            document.getElementById("Heading").innerHTML = position.coords.heading;
+            document.getElementById("Speed").innerHTML = position.coords.speed;
+        }
+
+        function onError(err) {
+            switch (err.code) {
+                case PositionError.PERMISSION_DENIED:
+                    alert("The user said no!");
+                    break;
+
+                case PositionError.PERMISSION_UNAVAILABLE:
+                    alert("Location data unavailable");
+                    break;
+
+                case PositionError.TIMEOUT:
+                    alert("Location request timed out");
+                    break;
+
+                default:
+                    alert("Unknown error");
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table id="output" style="width: 400px; height: 300px">
+        <tr>
+            <td>Latitude</td>
+            <td id="Latitude"></td>
+        </tr>
+        <tr>
+            <td>Longitude</td>
+            <td id="Longitude"></td>
+        </tr>
+        <tr>
+            <td>Altitude</td>
+            <td id="Altitude"></td>
+        </tr>
+        <tr>
+            <td>Accuracy</td>
+            <td id="Accuracy"></td>
+        </tr>
+        <tr>
+            <td>Altitude Accuracy</td>
+            <td id="AltitudeAccuracy"></td>
+        </tr>
+        <tr>
+            <td>Heading</td>
+            <td id="Heading"></td>
+        </tr>
+        <tr>
+            <td>Speed</td>
+            <td id="Speed"></td>
+        </tr>
+    </table>
+</body>
+</html>

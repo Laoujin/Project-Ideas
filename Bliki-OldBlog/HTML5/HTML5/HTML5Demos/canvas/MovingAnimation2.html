@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        height: 100%;
+        background-color: #e0e0e0;
+    }
+    #main { 
+	    position: absolute;
+        width: 400px;
+        height: 400px;
+        top: 50%;
+        left: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+    }
+    #output {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    </style>
+
+    <script type="text/javascript" src="../scripts/jquery-1.6.2.min.js"></script>
+
+    <script type="text/javascript">
+        var _dc;
+        var _cx, _cy;
+        var _x = 200;
+        var _y = 200;
+        var _dx = 5;
+        var _dy = 3;
+
+        $(function () {
+            if (!document.createElement("canvas").getContext) {
+                alert("This browser doesn't support canvases");
+            }
+            else {
+                // Get a canvas and a drawing context
+                var canvas = document.getElementById("output");
+                _dc = canvas.getContext("2d");
+
+                // Initialize _cx and _cy with the width and height of the canvas
+                _cx = canvas.width;
+                _cy = canvas.height;
+
+                // Draw a circle in the center of the canvas
+                drawGradientCircle(_dc, _x, _y, 50);
+
+                // Set a timer to fire every 10 milliseconds
+                setInterval(move, 20);
+            }
+        });
+
+        function move() {
+            // Erase the circle by clearing the rectangle
+            _dc.clearRect(_x - 50, _y - 50, 100, 100);
+
+            // Compute the circle's new position
+            var x = _x + _dx;
+
+            if (x < 51 || x > (_cx - 51)) {
+                x = _x - _dx;
+                _dx = -_dx;
+            }
+
+            var y = _y + _dy;
+
+            if (y < 51 || y > (_cy - 51)) {
+                y = _y - _dy;
+                _dy = -_dy;
+            }
+
+            _x = x;
+            _y = y;
+
+            // Redraw the circle in its new position
+            drawGradientCircle(_dc, _x, _y, 50);
+        }
+
+        function drawGradientCircle(dc, x, y, radius) {
+            // Save the canvas state
+            dc.save();
+
+            // Translate to the circle's center
+            dc.translate(x, y);
+
+            // Create a radial gradient for filling the circle
+            var gradient = dc.createRadialGradient(-15, -15, 5, -15, -15, 30);
+            gradient.addColorStop(0, "#f0f0f0");
+            gradient.addColorStop(1, "#808080");
+            dc.fillStyle = gradient;
+
+            // Draw the circle
+            dc.beginPath();
+            dc.arc(0, 0, radius, 0, Math.PI * 2, true);
+            dc.fill();
+
+            // Restore the canvas state
+            dc.restore();
+        }
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <img id="wood" src="../images/wood.jpg" style="border: 1px solid black" />
+        <canvas id="output" width="400px" height="400px"></canvas>
+    </div>
+</body>
+</html>

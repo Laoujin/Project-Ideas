@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Class - EventArgs</Title>
+			<Shortcut>evargs</Shortcut>
+			<Description>Code snippet for an EventArgs class</Description>
+			<Author>Van Schandevijl Wouter</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+        <Literal>
+          <ID>baseClass</ID>
+          <ToolTip>Base EventArgs class</ToolTip>
+          <Default>System.EventArgs</Default>
+        </Literal>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Class name</ToolTip>
+					<Default>SomeType</Default>
+				</Literal>
+        <Literal>
+          <ID>modifier</ID>
+          <ToolTip>Access modifier of the class</ToolTip>
+          <Default>Public</Default>
+        </Literal>
+        <Literal>
+          <ID>eventType</ID>
+          <ToolTip>The full TypeName of the event that will use these EventArgs</ToolTip>
+          <Default>Domain.Event</Default>
+        </Literal>
+        <Literal>
+          <ID>value</ID>
+          <ToolTip>The backing field of the EventArgs</ToolTip>
+          <Default>_value</Default>
+        </Literal>
+        <Literal>
+          <ID>valueType</ID>
+          <ToolTip>The type of the backing field of the EventArgs</ToolTip>
+          <Default>String</Default>
+        </Literal>
+        <Literal>
+          <ID>propertyName</ID>
+          <ToolTip>The name of the property exposing the backing field</ToolTip>
+          <Default>Value</Default>
+        </Literal>
+        <Literal>
+          <ID>paramValue</ID>
+          <ToolTip>The name of the parameter to set the backing field</ToolTip>
+          <Default>value</Default>
+        </Literal>
+        <Literal>
+          <ID>shortProp</ID>
+          <ToolTip>Replace with a short keyword of the property</ToolTip>
+          <Default>value</Default>
+        </Literal>
+			</Declarations>
+			<Code Language="VB">
+          <![CDATA[''' <summary>
+''' Bevat data voor het <see cref="E:$eventType$" /> event.
+''' </summary>
+<DebuggerDisplay("{DebuggerDisplay,nq}")> _
+  $modifier$ Class $name$EventArgs
+    Inherits $baseClass$
+    
+  #Region " Fields "
+  Private $value$ As $valueType$
+  #End Region
+  
+  #Region " Properties "
+  ''' <summary>
+  ''' Geeft $propSummary$
+  ''' </summary>
+  Public ReadOnly Property $propertyName$() As $valueType$
+    Get
+      Return $value$
+    End Get
+  End Property
+  #End Region
+  
+  #Region " Constructors "
+  Public Sub New(ByVal $paramValue$ As $valueType$)
+    Me.$value$ = $paramValue$
+  End Sub
+  #End Region
+  
+		#Region " DebuggerDisplay "
+    Private ReadOnly Property DebuggerDisplay() As String
+        Get
+            Dim dbg As String = String.Format("$propertyName$={0}", $value$)
+            Return dbg
+        End Get
+    End Property
+#End Region
+	End Class]]></Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

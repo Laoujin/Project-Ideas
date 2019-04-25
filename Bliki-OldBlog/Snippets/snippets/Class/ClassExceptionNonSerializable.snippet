@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Class - Exception</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Provides a basic implementation for a new exception class.</Description>
+      <Shortcut>Excep</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>System</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>modifier</ID>
+          <ToolTip>Access modifier of the class</ToolTip>
+          <Default>Public</Default>
+        </Literal>
+        <Literal>
+          <ID>exceptionName</ID>
+          <ToolTip>Rename class to description of exception.</ToolTip>
+          <Default>ProblemException</Default>
+        </Literal>
+        <Literal>
+          <ID>baseClass</ID>
+          <ToolTip>Base EventArgs class</ToolTip>
+          <Default>System.Exception</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB"><![CDATA[''' <summary>
+''' 
+''' </summary>
+<DebuggerDisplay("{DebuggerDisplay,nq}")>  _
+$modifier$ Class $ExceptionName$
+    Inherits $baseClass$
+
+#Region " Constructors "
+    Public Sub New(ByVal message As String)
+        MyBase.New(message)
+    End Sub
+
+    Public Sub New(ByVal message As String, ByVal inner As Exception)
+        MyBase.New(message, inner)
+    End Sub
+#End Region
+    
+#Region " DebuggerDisplay "
+    Private ReadOnly Property DebuggerDisplay() As String
+        Get
+            Dim dbg As String = String.Format("Message={0}", Message)
+            Return dbg
+        End Get
+    End Property
+#End Region
+End Class]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

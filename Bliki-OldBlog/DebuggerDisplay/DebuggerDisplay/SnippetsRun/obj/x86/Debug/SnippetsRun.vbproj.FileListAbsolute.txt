@@ -1,0 +1,13 @@
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\SnippetsRun\bin\Debug\SnippetsRun.exe
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\SnippetsRun\bin\Debug\SnippetsRun.pdb
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\SnippetsRun\bin\Debug\SnippetsRun.xml
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\SnippetsRun\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\SnippetsRun\obj\x86\Debug\SnippetsRun.Resources.resources
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\SnippetsRun\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\SnippetsRun\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\SnippetsRun\obj\x86\Debug\SnippetsRun.exe
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\SnippetsRun\obj\x86\Debug\SnippetsRun.xml
+C:\Users\Wouter\Documents\Visual Studio 2010\Projects\DebuggerDisplay\SnippetsRun\obj\x86\Debug\SnippetsRun.pdb
+C:\Users\PC\Documents\Dropbox\Personal\!Programming\Blogging\DebuggerDisplay\DebuggerDisplay\SnippetsRun\obj\x86\Debug\SnippetsRun.exe
+C:\Users\PC\Documents\Dropbox\Personal\!Programming\Blogging\DebuggerDisplay\DebuggerDisplay\SnippetsRun\obj\x86\Debug\SnippetsRun.xml
+C:\Users\PC\Documents\Dropbox\Personal\!Programming\Blogging\DebuggerDisplay\DebuggerDisplay\SnippetsRun\obj\x86\Debug\SnippetsRun.pdb

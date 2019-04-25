@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Property - Add 1 (with regions)</Title>
+			<Shortcut>fullprop</Shortcut>
+			<Description>Code snippet for one property with backing field</Description>
+			<Author>Van Schandevijl Wouter</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+        <Literal>
+          <ID>value</ID>
+          <ToolTip>The backing field</ToolTip>
+          <Default>_value</Default>
+        </Literal>
+        <Literal>
+          <ID>valueType</ID>
+          <ToolTip>The type of the backing field</ToolTip>
+          <Default>String</Default>
+        </Literal>
+        <Literal>
+          <ID>propertyName</ID>
+          <ToolTip>The name of the property exposing the backing field</ToolTip>
+          <Default>Value</Default>
+        </Literal>
+        <Literal>
+          <ID>paramValue</ID>
+          <ToolTip>The name of the parameter to set the backing field</ToolTip>
+          <Default>value</Default>
+        </Literal>
+        <Literal>
+          <ID>propSummary</ID>
+          <ToolTip>Replace with a descriptive summary of the property</ToolTip>
+          <Default>value</Default>
+        </Literal>
+			</Declarations>
+			<Code Language="VB">
+        <![CDATA[#Region " Fields "
+  Private $value$ As $valueType$
+  #End Region
+  
+  #Region " Properties "
+  ''' <summary>
+  ''' Gets or sets the $propSummary$
+  ''' </summary>
+  Public Property $propertyName$() As $valueType$
+    Get
+      Return $value$
+    End Get
+    Set(ByVal value As $valueType$)
+      $value$ = value
+    End Set
+  End Property
+  #End Region
+  
+  #Region " Constructors "
+  Public Sub New(ByVal $paramValue$ As $valueType$)
+    Me.$value$ = $paramValue$
+  End Sub
+  #End Region]]></Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

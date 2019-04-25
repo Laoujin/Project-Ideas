@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>GUI - EventHandler Exception Handling</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Try en Catch met ArgusManager.HandleException.</Description>
+      <Shortcut>guitry</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>end</ID>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[Try
+          $end$
+      Catch ex As Exception
+        ArgusManager.HandleException(ex)
+      End Try]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

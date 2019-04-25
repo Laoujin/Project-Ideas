@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>For Next</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Loops through a sequence of numbers.</Description>
+      <Shortcut>for</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>UpperBound</ID>
+          <Type>Integer</Type>
+          <ToolTip>Replace with an Integer value.</ToolTip>
+          <Default>10</Default>
+        </Literal>
+        <Literal>
+          <ID>Variable</ID>
+          <Type>Integer</Type>
+          <ToolTip>Replace with the counter variable name.</ToolTip>
+          <Default>i</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[For $Variable$ As Integer = 0 To $UpperBound$
+
+Next]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

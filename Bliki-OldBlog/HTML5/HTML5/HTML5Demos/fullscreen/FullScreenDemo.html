@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        height: 100%;
+        background-color: #c0c0c0;
+    }
+    #output { 
+	    position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -320px;
+        margin-top: -240px;
+    }
+    </style>
+
+    <script type="text/javascript" src="../scripts/jquery-1.6.2.min.js"></script>
+
+    <script type="text/javascript">
+        var _down = false;
+        var _canvas, _dc;
+        var _board;
+        var _x, _y;
+
+        $(function () {
+            if (!document.createElement("canvas").getContext) {
+                alert("This browser doesn't support canvases");
+            }
+            else {
+                // Check for full-screen support
+                if (!document.webkitFullscreenEnabled) {
+                    alert("This browser doesn't support the fullscreen API (or has it disabled)");
+                }
+                else {
+                    // Toggle full-screen on and off when the canvas is clicked
+                    $("#output").click(function (e) {
+                        if (document.webkitFullscreenElement === null)
+                            document.documentElement.webkitRequestFullscreen();
+                        else
+                            document.webkitExitFullscreen();
+                    });
+                }
+
+                // Get a canvas and a drawing context
+                var canvas = document.getElementById("output");
+                var dc = canvas.getContext("2d");
+
+                // Draw the title at the top of the chart
+                dc.save();
+                dc.textAlign = "center";
+                dc.textBaseline = "bottom";
+                dc.font = "24pt tahoma";
+                dc.shadowOffsetX = 4;
+                dc.shadowOffsetY = 4;
+                dc.shadowBlur = 8;
+                dc.shadowColor = "rgba(0, 0, 0, 0.5)";
+                dc.fillText("Annual Widget Production", 320, 80);
+                dc.restore();
+
+                // Draw horizontal lines and label the vertical axis
+                dc.strokeStyle = "#c0c0c0";
+                dc.textAlign = "right";
+
+                for (i = 0; i < 10; i++) {
+                    var y = 100 + (i * 28);
+                    drawLine(dc, 100, y, 540, y);
+                    var val = 1000 - (i * 100);
+                    dc.fillText(val, 95, y);
+                }
+
+                // Draw the "Widgets Produced" label on the vertical axis
+                dc.save();
+                dc.translate(100, 100);
+                dc.rotate(-Math.PI / 2);
+                dc.font = "12pt tahoma";
+                dc.textAlign = "center";
+                dc.textBaseline = "middle";
+                dc.fillText("Widgets Produced", -140, -44);
+                dc.restore();
+
+                // Draw vertical bars
+                dc.fillStyle = "red";
+
+                for (i = 0; i < 10; i++) {
+                    var x = 104 + (44 * i);
+                    var height = 100 + (i * 20);
+                    dc.fillRect(x, 380 - height, 36, height);
+                }
+
+                // Draw the axes of the chart
+                dc.strokeStyle = "black";
+                drawLine(dc, 100, 100, 100, 380);
+                drawLine(dc, 100, 380, 540, 380);
+
+                // Label the horizontal axis
+                dc.textAlign = "center";
+                dc.textBaseline = "middle";
+                dc.fillStyle = "black";
+
+                for (i = 0; i < 10; i++) {
+                    var x = 122 + (44 * i);
+                    var year = 2002 + i;
+                    dc.fillText(year, x, 396);
+                }
+
+                dc.font = "12pt tahoma";
+                dc.fillText("Year", 320, 420);
+            }
+        });
+
+        function drawLine(dc, x1, y1, x2, y2) {
+            dc.beginPath();
+            dc.moveTo(x1, y1);
+            dc.lineTo(x2, y2);
+            dc.stroke();
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="output" width="640" height="480" style="background-color: White; border: 1px solid gray" />
+</body>
+</html>

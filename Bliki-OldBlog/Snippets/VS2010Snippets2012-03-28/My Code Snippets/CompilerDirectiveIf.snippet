@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>#If</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Uses the #If compiler directive to control which block of code is compiled into the assembly.</Description>
+      <Shortcut>pif</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>condition</ID>
+          <ToolTip>The condition which determines whether the code within the scope of the #If construct is included in compilation.</ToolTip>
+          <Default>DEBUG</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB"><![CDATA[#If $condition$ Then
+    
+#End If]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

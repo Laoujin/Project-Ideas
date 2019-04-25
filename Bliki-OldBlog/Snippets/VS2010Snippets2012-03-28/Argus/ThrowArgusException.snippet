@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Throw ArgusException</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Throws an ArgusException.</Description>
+      <Shortcut>Throw</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>exceptionMsg</ID>
+          <Type>String</Type>
+          <ToolTip>Replace with the exception message.</ToolTip>
+          <Default>"Exception Occured"</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[Throw New ArgusException($exceptionMsg$)]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

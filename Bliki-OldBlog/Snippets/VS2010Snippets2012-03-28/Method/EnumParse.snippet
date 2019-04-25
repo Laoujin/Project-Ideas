@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Parse String to Enum</Title>
+      <Author>Van Schandevijl Wouter</Author>
+      <Description>Convert a string to an Enum value</Description>
+      <Shortcut>enump</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>variable</ID>
+          <Type>String</Type>
+          <ToolTip>Replace with the name of the variable which will be assigned the Enumeration value.</ToolTip>
+          <Default>enumValue</Default>
+        </Literal>
+		<Literal>
+          <ID>input</ID>
+          <Type>String</Type>
+          <ToolTip>The input string to parse.</ToolTip>
+          <Default>input</Default>
+        </Literal>
+		<Literal>
+          <ID>enumType</ID>
+          <Type>String</Type>
+          <ToolTip>Replace with the Enumeration type.</ToolTip>
+          <Default>SomeEnum</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[Dim $variable$ = CType([Enum].Parse(GetType($enumType$), $input$), $enumType$)]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,234 @@
+Introduction
+============
+- Het is veel kleine dingen
+	- Een aantal vereenvoudigingen
+		- doctype: Tijd om te stoppen met Quirks mode (Quirks Mode, Standards Mode, Almost Standards Mode/Limited Quirks Mode)
+		- encoding: UTF-8 is altijd een veilige keuze
+	- Nieuwe HTML tags ("betekenisloos" of nieuwe feature; met JS API)
+	- Sommige dingen (geolocation, localStorage) behoren niet echt tot HTML5 zelf
+
+- Already supported
+	- More or less
+	- Feature testing & js emulators (yepnope.js)
+	- HTML5 shivs Modernizr
+
+NEW ELEMENTS
+============
+<section>
+The section element represents a generic document or application section. 
+A section, in this context, is a thematic grouping of content, typically 
+with a heading. Examples of sections would be chapters, the tabbed pages 
+in a tabbed dialog box, or the numbered sections of a thesis. A Web site's 
+home page could be split into sections for an introduction, news items, 
+contact information.
+</section>
+<nav>
+The nav element represents a section of a page that links to other pages 
+or to parts within the page: a section with navigation links. Not all 
+groups of links on a page need to be in a nav element — only sections 
+that consist of major navigation blocks are appropriate for the nav element. 
+In particular, it is common for footers to have a short list of links to 
+common pages of a site, such as the terms of service, the home page, and a 
+copyright page. The footer element alone is sufficient for such cases, 
+without a nav element.
+</nav>
+<article>
+The article element represents a component of a page that consists of a 
+self-contained composition in a document, page, application, or site and 
+that is intended to be independently distributable or reusable, e.g. in 
+syndication. This could be a forum post, a magazine or newspaper article, 
+a Web log entry, a user-submitted comment, an interactive widget or gadget, 
+or any other independent item of content.
+</article>
+<aside>
+The aside element represents a section of a page that consists of content 
+that is tangentially related to the content around the aside element, and 
+which could be considered separate from that content. Such sections are 
+often represented as sidebars in printed typography. The element can be 
+used for typographical effects like pull quotes or sidebars, for advertising, 
+for groups of nav elements, and for other content that is considered separate 
+from the main content of the page.
+</aside>
+<hgroup>
+The hgroup element represents the heading of a section. The element is used to 
+group a set of h1–h6 elements when the heading has multiple levels, such as 
+subheadings, alternative titles, or taglines.
+</hgroup>
+<header>
+The header element represents a group of introductory or navigational aids.
+ A header element is intended to usually contain the section’s heading 
+ (an h1–h6 element or an hgroup element), but this is not required. The 
+ header element can also be used to wrap a section’s table of contents, a 
+ search form, or any relevant logos.
+</header>
+<footer>
+The footer element represents a footer for its nearest ancestor sectioning 
+content or sectioning root element. A footer typically contains information 
+about its section such as who wrote it, links to related documents, copyright 
+data, and the like. Footers don’t necessarily have to appear at the end of a 
+section, though they usually do. When the footer element contains entire 
+sections, they represent appendices, indexes, long colophons, verbose license 
+agreements, and other such content.
+</footer>
+<time>
+The time element represents either a time on a 24 hour clock, or a precise date
+in the proleptic Gregorian calendar, optionally with a time and a time-zone 
+offset.
+</time>
+<mark>
+The mark element represents a run of text in one document marked or highlighted 
+for reference purposes.
+</mark>
+
+FORMS
+=====
+<input type="search"> for search boxes
+<input type="number"> for spinboxes
+<input type="range"> for sliders
+<input type="color"> for color pickers
+<input type="tel"> for telephone numbers
+<input type="url"> for web addresses
+<input type="email"> for email addresses
+<input type="date"> for calendar date pickers
+<input type="month"> for months
+<input type="week"> for weeks
+<input type="time"> for timestamps
+<input type="datetime"> for precise, absolute date+time stamps
+<input type="datetime-local"> for local dates and times
+
+Detection:
+var i = document.createElement("input");
+i.setAttribute("type", "color");
+return i.type !== "text";
+
+if (!Modernizr.inputtypes.date) {
+  // no native support for <input type="date"> :(
+  // maybe build one yourself with Dojo or jQueryUI
+}
+
+Extra features:
+---------------
+if (Modernizr.input.placeholder) {
+}
+if (Modernizr.input.autofocus) {
+  // autofocus works!
+}
+
+
+localStorage:
+=============
+function supports_local_storage() {
+  try {
+    return 'localStorage' in window && window['localStorage'] !== null;
+  } catch(e){
+    return false;
+  }
+}
+
+
+if (Modernizr.localstorage) {
+ 
+}
+ 
+
+Video:
+======
+http://camendesign.com/code/video_for_everybody
+http://videojs.com/
+
+Codecs:
+Ogg Theora
+H.264 video
+WebM
+
+function supports_h264_baseline_video() {
+  if (!supports_video()) { return false; }
+  var v = document.createElement("video");
+  return v.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
+}
+canPlayType returns:
+"probably" if the browser is fairly confident it can play this format
+"maybe" if the browser thinks it might be able to play this format
+"" (an empty string) if the browser is certain it can’t play this format 
+ 
+if (Modernizr.video) {
+  // let's play some video! but what kind?
+  if (Modernizr.video.webm) {
+    // try WebM
+  } else if (Modernizr.video.ogg) {
+    // try Ogg Theora + Vorbis in an Ogg container
+  } else if (Modernizr.video.h264){
+    // try H.264 video + AAC audio in an MP4 container
+  }
+}
+ 
+ 
+Canvas:
+=======
+function supports_canvas() {
+  return !!document.createElement('canvas').getContext;
+}
+or
+if (Modernizr.canvas) {
+
+}
+ 
+
+ 
+WEB WORKERS
+===========
+ function supports_web_workers() {
+  return !!window.Worker;
+}
+ 
+if (Modernizr.webworkers) {
+  // window.Worker is available!
+} else {
+	// no native support for web workers :(
+}
+
+
+OFFLINE WEB APPLICATIONS
+========================
+function supports_offline() {
+  return !!window.applicationCache;
+}
+
+if (Modernizr.applicationcache) {
+  // window.applicationCache is available!
+} else {
+  // no native support for offline :(
+}
+
+GEOLOCATION
+===========
+function supports_geolocation() {
+  return 'geolocation' in navigator;
+}
+if (Modernizr.geolocation) {
+  // let's find out where you are!
+} else {
+  // https://code.google.com/p/geo-location-javascript/
+}
+
+
+MICRODATA
+=========
+function supports_microdata_api() {
+  return !!document.getItems;
+}
+
+HISTORY API
+===========
+function supports_history_api() {
+  return !!(window.history && history.pushState);
+}
+
+if (Modernizr.history) {
+  // history management works!
+} else {
+  // no history support :(
+  // fall back to a scripted solution like
+  // https://github.com/browserstate/history.js
+}
+

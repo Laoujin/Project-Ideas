@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>DebuggerDisplay Property</Title>
+			<Shortcut>ddp</Shortcut>
+			<Description>Add the DebuggerDisplay property</Description>
+			<Author>Van Schandevijl Wouter</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+        <Literal>
+          <ID>end</ID>
+        </Literal>
+			</Declarations>
+			<Code Language="VB"><![CDATA[#Region " DebuggerDisplay "
+    Private ReadOnly Property DebuggerDisplay() As String
+        Get
+            Dim dbg As String = String.Format($end$)
+            Return dbg
+        End Get
+    End Property
+#End Region]]></Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

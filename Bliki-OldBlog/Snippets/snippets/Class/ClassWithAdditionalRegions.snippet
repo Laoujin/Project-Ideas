@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Class</Title>
+			<Shortcut>class</Shortcut>
+			<Description>Code snippet for creating a new class</Description>
+			<Author>Van Schandevijl Wouter</Author>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Class name</ToolTip>
+					<Default>SomeType</Default>
+				</Literal>
+        <Literal>
+          <ID>modifier</ID>
+          <ToolTip>Access modifier of the class</ToolTip>
+          <Default>Public</Default>
+        </Literal>
+        <Literal>
+          <ID>end</ID>
+        </Literal>
+			</Declarations>
+			<Code Language="VB"><![CDATA[''' <summary>
+''' 
+''' </summary>
+<DebuggerDisplay("{DebuggerDisplay,nq}")> _
+  $modifier$ Class $name$
+#Region " Fields "
+#End Region
+
+#Region " Properties "
+#End Region
+
+#Region " Constructors "
+	Public Sub New()
+	End Sub
+#End Region
+  
+		#Region " DebuggerDisplay "
+    Private ReadOnly Property DebuggerDisplay() As String
+        Get
+            Dim dbg As String = String.Format("")
+            Return dbg
+        End Get
+    End Property
+#End Region
+	End Class]]></Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
