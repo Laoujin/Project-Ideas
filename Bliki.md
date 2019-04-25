@@ -33,7 +33,8 @@ Article on dotnet cli
 throwing npx in the mix
 
 - Surviving VIM (open file, create file, save file as sudo, basic cursor movement/editing/search) multiple files open? copy from one to the other?
-- JavaScript MDN Array.prototype vs c#
+> Q: How do you generate a random string? A: Put a Windows user in front of vi, and tell them to exit
+
 - Regex tutorial?
 ----- Validation, 
 ----- Other usages: Apache htaccess, Css attribute selectors ($ and ^), IDE, grep, CLI, 
@@ -41,7 +42,7 @@ throwing npx in the mix
 ---- Check https://www.youtube.com/watch?v=EMjTp12VbQ8 (View, ViewContainer, TemplateRef)
 - MomentJS tutorial + MomentJS vs C# formatting differences
 
-bliki: powershell series -> also link to learnxinyminutes
+bliki: powershell series -> also link to learnxinyminutes (done)
 piping in powershell needs to be refreshed
 | % { $_ -like "xxx"} syntax?
 - Blog post about PowerShell getting help
