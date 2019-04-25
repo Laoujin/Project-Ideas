@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>D3.js Tut: Use data width scale and axis</title>
+	<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="container" id="content">
+</div>
+
+<script type="text/javascript">
+	var dataArray = [50, 80, 30, 20, 5]; // = the domain
+	var maxDataArrayValue = d3.max(dataArray);
+	var size = {width: 500, height: 500};
+	var widthScale = d3.scale.linear()
+		.domain([0, maxDataArrayValue])
+		.range([0, size.width]);
+
+	var color = d3.scale.linear()
+		.domain([0, maxDataArrayValue])
+		.range(['white', 'black'])
+
+	var axis = d3.svg.axis()
+		.ticks(10)
+		.scale(widthScale);
+
+	var canvas = d3.select('#content')
+		.append('svg')
+		.attr('width', size.width)
+		.attr('height', size.height)
+		.append('g')
+		.attr('transform', 'translate(50, 50)');
+
+	var bars = canvas.selectAll('rect')
+		.data(dataArray)
+		.enter()
+			.append('rect')
+			.attr('width', d => widthScale(d))
+			.attr('height', 50)
+			.attr('y', (d, i) => i * 80)
+			.attr("fill", () => "hsl(" + Math.random() * 360 + ",100%,50%)")
+			.attr('stroke', d => color(d))
+			.attr('stroke-width', 1)
+
+	canvas.append('g')
+		.attr('transform', 'translate(0, 400)')
+		.call(axis);
+</script>
+</body>
+</html>

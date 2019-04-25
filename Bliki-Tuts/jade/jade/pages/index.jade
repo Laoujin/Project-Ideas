@@ -1,0 +1,70 @@
+extends ../layout.jade
+
+//-
+  ../layout.jade contains "block content"
+  "content" can be replaced with any name
+block content
+  h1 Fun with <strong>Gulp<strong> &amp; Jade
+  // actual html comment
+  h2 Jump to
+  ul
+    li
+      a(href="mixins.html") Mixins
+
+  h2 The Basics
+  p.
+    A paragraph
+    ... With #[span(style="color:red") interpolation]
+
+  p Or even more text
+  | with <b>tags</b> which are outside the p
+
+  p.with-a-class.another-class
+
+  div: span#id
+    | Generates &lt;div&gt;&lt;div id="id" /&gt;&lt;/div&gt;
+
+  hr.c0(class=['c1', 'c2'] style={height: '10px', width: '250px'}
+    class="c3" class={c4: true}
+  )&attributes({'data-fun': funPercentage, notEscaped: '<'})
+
+  h2 Variables
+  -
+    var day = true
+    day = new Date().getHours() > 6
+
+  div(style='background-color:' + (day ? 'blue' : 'black'),) How the sky looking
+
+  #variables
+    - day = 'fun>' // '>' is not escaped with !=
+    h4(class!=day)
+      input(type='checkbox' checked=true && funPercentage > 70)
+      span Display fun factor with: \#{funPercentage}
+
+  hr
+  h2 Control-Flow
+
+  - funPercentage = 99
+  unless funPercentage
+    p you have no fun
+
+  else if funPercentage === 1
+    p you have the least fun
+
+  else
+    case funPercentage
+      when 2: p= 'you have little fun'
+      when 100
+      when 99
+        p you have the most fun (!{funPercentage}% unescaped)
+      default
+        p
+          != 'you have <b>' + (funPercentage+1) + '</b>% fun'
+
+  ul
+    //- also works with objects
+    each val, index in ['zero', 'one', 'two'] || ['empty']
+      li= index + ': ' + val
+
+    while false
+      li ouch

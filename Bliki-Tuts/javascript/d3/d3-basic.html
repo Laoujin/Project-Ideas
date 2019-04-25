@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>D3.js Tut: Basic Usage</title>
+	<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="container" id="content">
+</div>
+
+<script type="text/javascript">
+	//d3.select('#content').append('p').text('grrr..')
+
+	var canvas = d3.select('#content')
+		.append('svg')
+		.attr('width', 500)
+		.attr('height', 500);
+
+	var circle = canvas.append('circle')
+		.attr('cx', 250)
+		.attr('cy', 250)
+		.attr('r', 50)
+		.attr('fill', 'red');
+
+	var rect = canvas.append('rect')
+		.attr('width', 25)
+		.attr('height', 25);
+
+	var line = canvas.append('line')
+		.attr('x1', 25)
+		.attr('y1', 100)
+		.attr('x2', 400)
+		.attr('y2', 400)
+		.attr('stroke', 'green')
+		.attr('stroke-width', 10)
+</script>
+</body>
+</html>

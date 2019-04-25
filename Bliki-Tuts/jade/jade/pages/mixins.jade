@@ -1,0 +1,42 @@
+extends ../layout.jade
+
+append css
+  // adds to layout.jade css block
+
+// mixin youtube(id, width = 420, height = 315) -> Default parameters work only in ES2015 compatible environment
+mixin youtube(id, width, height, ...extras)
+  .embed-responsive.embed-responsive-4by3
+    // variables don't need escaping by default
+    //<iframe width=width height=height src="https://www.youtube.com/embed/#{id}" frameborder="0" allowfullscreen></iframe>
+    h3 id #{id}
+
+    // Mixin blocks
+    if block
+      block
+    else
+      p No block
+
+    ul
+      each extra in extras
+        li= extra
+
+    hr
+
+block withsubcontent
+  div Special subcontent! :)
+
+block content
+  div
+    +youtube("Without block", 50, 50)
+
+    +youtube("With block and rest arguments", 50, 50, 1, 2)
+      p Block given
+      img(src="img/youtube.png" width="50" height="25")
+
+    +attrs("With custom attributes")(style="color:orange", class="special")
+
+mixin attrs(id)
+  // h3&attributes(attributes)= id
+  h3(id=id)&attributes(attributes) id #{id}
+  // attributes.style / attributes.class
+  hr

@@ -1,0 +1,19 @@
+{
+  "name": "tutorial-jade",
+  "version": "0.1.0",
+  "description": "How to set up a semi-static site with Jade",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wouter Van Schandevijl <woutervs@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "browser-sync": "^2.9.3",
+    "gulp": "^3.9.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-plumber": "^1.0.1"
+  }
+}

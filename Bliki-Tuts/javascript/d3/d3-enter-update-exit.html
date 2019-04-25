@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>D3.js Tut: Enter-Update-Exit cycle + Transition</title>
+	<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="container" id="content">
+</div>
+
+<script type="text/javascript">
+	var data = [10, 20];
+
+	var canvas = d3.select('#content')
+		.append('svg')
+		.attr('width', 500)
+		.attr('height', 500);
+
+	var circle = canvas.append('circle') // add one to the DOM manually
+		.attr('cx', 50)
+		.attr('cy', 40)
+		.attr('r', 25);
+
+	var circles = canvas.selectAll('circle')
+		.data(data)
+		.attr('fill', 'red'); // = update circle already in the DOM
+
+	circles.enter() // = the 2nd data element, not yet added to the DOM
+		.append('circle')
+		.attr('cx', 50)
+		.attr('cy', 100)
+		.attr('fill', 'green')
+		.attr('r', d => d * 2);
+
+	circles.exit() // = would execute for circles in the DOM but not in `data`
+		.remove();
+
+	circles.transition()
+		.duration(750)
+		.delay((d, i) => i * 10)
+		.attr("r", d => Math.sqrt(d * 3));
+</script>
+</body>
+</html>

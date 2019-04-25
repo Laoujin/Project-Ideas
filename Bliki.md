@@ -4,8 +4,10 @@ Bliki
 Import old blog?
 --> And put a moved notice there? :)
 
-Old blog drafts are at:
-C:\Users\Wouter\Dropbox\Personal\Blogging\!LiveWriterDrafts
+
+
+
+
 
 
 Code changes
@@ -58,8 +60,13 @@ dot-net-startup-paths:
 
 
 Tut for:
-CultureInfo.DefaultThreadCurrentCulture = culture;
+CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("nl-BE");
 CultureInfo.DefaultThreadCurrentUICulture = culture;
+
+Thread.CurrentThread.CurrentCulture = new CultureInfo("nl-BE");
+Thread.CurrentThread.CurrentUICulture = new CultureInfo("nl-BE");
+
+
 - Formatting dates
 - Names of weekdays
 - Formatting numbers
@@ -70,3 +77,10 @@ elbahari arcticle --> zelf een async series?
 Tutorials for:
 - TopShelf
 - Quartz
+
+
+
+
+How programming best practices contradict eachother:
+YAGNI: You ain't gonna need it
+Rule Of Three, KISS, 
