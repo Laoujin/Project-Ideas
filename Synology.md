@@ -31,9 +31,6 @@ alias mike="cd /c/code/Autohotkey/Mi-Ke"
 
 # DokuWiki
 
-Might need to move Tuts to there...?
-
-TODO: Should move DokuWiki under source control  
 https://github.com/istepanov/docker-dokuwiki  
 ```
 docker run --rm --volumes-from dokuwiki -v $(pwd):/backup ubuntu tar zcvf /backup/dokuwiki-backup.tar.gz /var/dokuwiki-storage

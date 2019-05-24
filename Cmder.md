@@ -41,6 +41,10 @@ Don't just take the amount of time spent on a filesystem location but also:
 - favorite locations
 - blacklist locations
 
+# Cmd
+
+Windows 7 Command Prompt Commands
+https://www.lifewire.com/list-of-windows-7-command-prompt-commands-4107370
 
 ## Mklink
 

@@ -1,0 +1,42 @@
+Angular2
+========
+https://www.youtube.com/watch?v=hpqvLKmmm5U
+https://www.youtube.com/watch?v=IlawbLXJvxQ
+
+https://www.youtube.com/watch?v=EwYD_xqB7Qs
+John Papa: (PluralSight) & Dan Wahlin
+
+https://devchat.tv/adv-in-angular
+https://angularair.com/
+
+http://codepen.io/towc/pen/pjLMJm
+
+Stuff to read
+-------------
+https://nodesource.com/blog/eleven-npm-tricks-that-will-knock-your-wombat-socks-off/
+https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch6.md
+https://www.infoq.com/presentations/code-bugs-legacy-pitfalls
+https://www.youtube.com/watch?v=vSdGr4K4qLg
+
+
+Jekyll blog posts
+https://jekyllrb.com/docs/frontmatter/
+https://learn.cloudcannon.com/jekyll/jekyll-file-structure/#other-filesfolders
+
+
+
+https://medium.muz.li/15-must-have-chrome-extensions-for-web-designers-and-front-end-developer-b12c1bd9490c#.m9sn68glv
+https://cmd-t.webydo.com/75-of-the-best-resources-for-web-designers-98208e8709a#.cyo6qxz6l
+
+JSPM:
+- http://jspm.io/docs/getting-started.html
+
+Zone.js
+- https://github.com/angular/zone.js/
+
+RxJs
+- https://medium.com/google-developer-experts/angular-introduction-to-reactive-extensions-rxjs-a86a7430a61f
+- http://reactivex.io/rxjs/manual/overview.html
+
+Angular Stuffz:
+- https://www.youtube.com/watch?v=CUxD91DWkGM

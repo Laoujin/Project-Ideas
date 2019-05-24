@@ -5,7 +5,7 @@ Import old blog?
 --> And put a moved notice there? :)
 
 
-
+Nuget profile for Package Manager Console doesn't work with VS2017
 
 
 
@@ -79,8 +79,17 @@ Tutorials for:
 - Quartz
 
 
+mnemonics: imperial: 5 tomatoes: five to-mate-oes 5280 feet in a mile
 
 
 How programming best practices contradict eachother:
 YAGNI: You ain't gonna need it
 Rule Of Three, KISS, 
+
+Managing complexity
+
+"Good enough"-software			VS		Goldplating
+Under-egineering			VS		Over-engineering
+IT Decides (Low ROI, No relevance)	VS		Business Decides (Scope creep)
+Big Design Up Front			VS		No Design Up Front
+Boy scout rule vs It works, don't touch it

@@ -92,7 +92,7 @@ Presentations from Dan Abramov are always pretty amazing.
 Oldies
 ------
 
-[Barbare Liskov - The Power of Abstraction](https://www.youtube.com/watch?v=GDVAHA0oyJU)
+[Barbara Liskov - The Power of Abstraction](https://www.youtube.com/watch?v=GDVAHA0oyJU)
 
 [Growing a Language, by Guy Steele](https://www.youtube.com/watch?v=_ahvzDzKdB0)
 
@@ -103,4 +103,4 @@ Rewatch
 
 [Things IT People Never Say](https://www.youtube.com/watch?v=4m7YjAuDMY0)
 
-[Alan Kay at OOPSLA 1997 - The computer revolution hasnt happened yet](https://www.youtube.com/watch?v=oKg1hTOQXoY)
+[Alan Kay at OOPSLA 1997 - The computer revolution hasn't happened yet](https://www.youtube.com/watch?v=oKg1hTOQXoY)
