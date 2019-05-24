@@ -1,5 +1,0 @@
-C:\Users\PC\Desktop\HTML5\HTML5Demos\bin\HTML5Demos.dll
-C:\Users\PC\Desktop\HTML5\HTML5Demos\bin\HTML5Demos.pdb
-C:\Users\PC\Desktop\HTML5\HTML5Demos\obj\Debug\HTML5Demos.csprojResolveAssemblyReference.cache
-C:\Users\PC\Desktop\HTML5\HTML5Demos\obj\Debug\HTML5Demos.dll
-C:\Users\PC\Desktop\HTML5\HTML5Demos\obj\Debug\HTML5Demos.pdb
