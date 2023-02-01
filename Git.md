@@ -1,43 +1,7 @@
 Git
 ===
 
-Many a interesting snippet:  
-https://github.com/git-tips/tips
-
-
 dotfiles: if .gitconfig doesn't exist, create it with correct includes
-
-Aliases
--------
-```
-Shortcuts for interfacing with GitHub:
-https://hub.github.com/
-git pr -> pull-request = git po + check out the pull-request url + start url - check ruby gem for stash pull requests
-
-wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-http://haacked.com/archive/2014/07/28/github-flow-aliases/
-
-On undoing, fixing, or removing commits in git‏:
-https://sethrobertson.github.io/GitFixUm/fixup.html
-
-For more interesting aliases:
-Git Bash/cygwin: https://github.com/tj/git-extras/blob/master/Commands.md
-Check out these: https://gist.github.com/robmiller/6018582
-https://git.wiki.kernel.org/index.php/Aliases
-
-Checkout ours/theirs
-http://stackoverflow.com/a/11843922/540352
-
-https://github.com/AlexZeitler/posh-git-alias
-```
-
-
-Config
-------
-```
-[difftool "vs"]
-cmd = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe' $LOCAL $REMOTE Source Target //t
-```
 
 
 Clone And Enter
