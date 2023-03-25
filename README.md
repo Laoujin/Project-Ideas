@@ -1,6 +1,12 @@
 Project Ideas
 =============
 
+I guess we need to start getting rid of this repository...
+Doing it, or moving it to a more relevant place...
+
+
+
+
 - C# Pipelines
 - PowerShell: Find out what process is locking a file
 

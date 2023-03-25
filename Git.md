@@ -1,9 +1,6 @@
 Git
 ===
 
-dotfiles: if .gitconfig doesn't exist, create it with correct includes
-
-
 Clone And Enter
 ---------------
 ```
