@@ -36,14 +36,10 @@ Things to do
 
 Some random stuff:  
 
-- Jenkins: have a gem check all urls for 404s?
 - licenser issues + easier update of many projects?
 
 
 ### Check software
-
-- NimbleText
-
 
 pongit.be
 Speel pong (multiplayer?)
