@@ -1,12 +1,5 @@
 Raspberry playground
 ====================
-Hostnames:  
-rasp-you-know
-
-Default login: pi / raspberry
-
-ssh rasp-you-know -l pi  
-ssh 192.168.1.41 -l pi
 
 http://x.cygwin.com/docs/ug/using-remote-apps.html
 
